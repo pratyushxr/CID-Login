@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CID Login</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Material Icons Link -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <link rel="icon" href="CID.png">
+   
+</head>
+<body style="height: 100vh !important;">
+    <div class="login-container">
+        <img src="Images/CID.png" alt="Logo" class="logo"> <!-- Add your logo here -->
+        <h2>CID Login</h2>
+        <form id="loginForm">
+            <div class="input-container">
+                <i class="material-icons">person</i>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter CID Character Name">
+            </div>
+            <div class="input-container">
+                <i class="material-icons">lock</i>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password">
+            </div>
+            <button type="submit">Login Now</button>
+        </form>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script> <!-- Link to external JS -->
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Function to detect if the user is on a mobile device
+        function isMobileDevice() {
+            return /Mobi|Android/i.test(navigator.userAgent);
+        }
+
+        // Check if the user is on a mobile device
+        if (isMobileDevice()) {
+            // Hide the entire content of the body
+            document.body.style.display = "none"; // Hide all content
+            // Create and display a message
+            const message = document.createElement('div');
+            message.innerHTML = "<h1 style='color: black; text-align: center; margin-top: 20%;'>This website is for desktop use only.</h1><p style='color: black; text-align: center;'>Please visit this site on a desktop or laptop computer.</p>";
+            message.style.backgroundColor = "white"; // Set background to white
+            message.style.height = "100vh"; // Full height to fill the screen
+            message.style.display = "flex"; // Use flexbox for centering
+            message.style.justifyContent = "center"; // Center horizontally
+            message.style.alignItems = "center"; // Center vertically
+            document.body.parentNode.appendChild(message); // Append the message to the body
+        }
+    });
+</script>
+</html>
